@@ -1,0 +1,20 @@
+
+@objc func setText(_ sender: ActionSheetLocalePicker) {
+    print("setText invoked")
+}
+
+func showLocale(_ sender: UIPickerView) {
+    let done: ActionLocaleDoneBlock = { picker, selectedValue in
+        if sender.responds(to: #selector(self.setText(_:))) {
+            sender.perform(#selector(self.setText(_:)), with: selectedValue?.identifier)
+        }
+    }
+    let cancel: ActionLocaleCancelBlock = { picker in
+        print("Locale Picker Canceled")
+    }
+    
+    let picker = ActionSheetLocalePicker(title: "Select Locale:", initialSelection: NSTimeZone(name: "Antarctica/McMurdo") as TimeZone?, doneBlock: done, cancel: cancel, origin: sender)
+    
+    picker?.hideCancel = true
+    picker?.show()
+}
