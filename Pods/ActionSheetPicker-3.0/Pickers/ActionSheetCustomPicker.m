@@ -40,6 +40,7 @@
         self.hideCancel = !showCancelButton;
         NSAssert(delegate, @"Delegate can't be nil");
         _delegate = delegate;
+        self.customDelegate = delegate;
         if (initialSelections)
             self.initialSelections = [[NSArray alloc] initWithArray:initialSelections];
     }
@@ -103,6 +104,7 @@
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin
 {
+    NSLog(@"words :: %@", _delegate);
     // Ignore parent args and just notify the delegate
     if ( [_delegate respondsToSelector:@selector(actionSheetPickerDidSucceed:origin:)] )
     {

@@ -68,6 +68,7 @@ static NSString *const kActionTarget = @"buttonActionTarget";
 @property(nonatomic, strong) UIToolbar *toolbar;
 @property(nonatomic, copy) NSString *title;
 @property(nonatomic, strong) UIView *pickerView;
+@property(nonatomic, strong) id<UIPickerViewDelegate, UIPickerViewDataSource> customDelegate;
 @property(nonatomic, readonly) CGSize viewSize;
 @property(nonatomic, strong) NSMutableArray *customButtons;
 @property(nonatomic, assign) BOOL hideCancel; // show or hide cancel button.
