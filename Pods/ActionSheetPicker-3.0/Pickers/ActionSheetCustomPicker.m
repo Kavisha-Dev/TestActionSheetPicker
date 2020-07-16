@@ -40,7 +40,6 @@
         self.hideCancel = !showCancelButton;
         NSAssert(delegate, @"Delegate can't be nil");
         _delegate = delegate;
-        self.customDelegate = delegate;
         if (initialSelections)
             self.initialSelections = [[NSArray alloc] initWithArray:initialSelections];
     }

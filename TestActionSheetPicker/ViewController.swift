@@ -53,6 +53,13 @@ class ActionSheetPickerCustomPickerDelegate: NSObject, ActionSheetCustomPickerDe
         years   = ["2019", "2020", customYearData]
     }
     
+    init(_ month: [String], _ year: [String]) {
+        super.init()
+        
+        months  = month
+        years   = year
+    }
+    
     func actionSheetPickerDidSucceed(_ actionSheetPicker: AbstractActionSheetPicker?, origin: Any?) {
         print("actionSheetPickerDidSucceed HIT")
         print("Chosen month \(selectedMonth), and year \(selectedYear)")
